@@ -1,0 +1,50 @@
+@import "../../../../../assets/styles/base/variables";
+@import "../../../../../assets/styles/abstracts/mixins";
+
+.main-section{
+    height: calc(100vh - 86px);
+    background: linear-gradient(to bottom , $primary-Blue-600 ,$primary-Blue-500);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: $primary-grey-100;
+    @include respond('mobile'){
+       padding: 8px;
+    }
+    .sec-info{
+        h3{
+            width: 526px;
+            font-size: 48px;
+            font-family: 'IBM Plex Sans';
+            font-weight: 700;
+            text-align: center;
+            line-height: 125%;
+            @include respond('mobile'){
+                width:auto;
+                font-size: 24px;
+            }
+        }
+        p{
+            font-size: 24px;
+            font-family: 'IBM Plex Sans';
+            font-weight: 700;
+            text-align: center;
+            line-height: 125%;   
+            @include respond('mobile'){
+                width:auto;
+                font-size: 16px;
+                
+            }
+        }
+    }
+    .abs-image{
+        max-width: 100%;
+        @include respond('mobile'){
+            display: none;
+        }
+        img{
+            max-width: 100%;
+        }
+    }
+}

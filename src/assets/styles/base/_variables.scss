@@ -1,0 +1,78 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+:root {
+  --cf-p: 4.4%; // container fluid padding
+  --c-p: 16.91%; // container padding
+  --cfc-p: calc(var(--c-p) - var(--cf-p)); // container fluid
+
+  @include media-breakpoint-down(md) {
+    --cf-p: 5%; // container fluid padding
+    --c-p: 5%; // container padding
+  }
+}
+
+// BREAKPOINTS
+$mobile: 375px;
+$tablet: 768px;
+$sm-desktop: 992px;
+$md-desktop: 1024px;
+$lg-desktop: 1200px;
+$xxl-desktop: 1440px;
+$xxxl-desktop: 1920px;
+
+$container-padding: (
+  $xxxl-desktop: 160px,
+  $xxl-desktop: 120px,
+  $lg-desktop: 80px,
+  $md-desktop: 40px,
+  $sm-desktop: 32px,
+  $tablet: 24px,
+  $mobile: 16px,
+);
+
+// dashboard container
+$dashboard-mobile: 375px;
+$dashboard-tablet: 767px;
+$dashboard-sm-desktop: 992px;
+$dashboard-md-desktop: 1024px;
+$dashboard-lg-desktop: 1200px;
+$dashboard-xxl-desktop: 1440px;
+$dashboard-xxxl-desktop: 1920px;
+
+$dashboard-container-padding: (
+  $dashboard-xxxl-desktop: 48px,
+  $dashboard-xxl-desktop: 48px,
+  $dashboard-lg-desktop: 48px,
+  $dashboard-md-desktop: 32px,
+  $dashboard-sm-desktop: 32px,
+  $dashboard-tablet: 24px,
+  $dashboard-mobile: 16px,
+);
+
+$aside-width-var: (
+  $dashboard-xxxl-desktop: 15.5rem,
+  $dashboard-xxl-desktop: 15.5rem,
+  $dashboard-lg-desktop: 15.5rem,
+  $dashboard-md-desktop: 15.5rem,
+  $dashboard-sm-desktop: 13.5rem,
+  $dashboard-tablet: 4rem,
+  $dashboard-mobile: 0rem,
+);
+
+$primary-Blue-900: #08081E;
+$primary-Blue-800: #031228;
+$primary-Blue-700: #40454D;
+$primary-Blue-600: #08081B;
+$primary-Blue-500: #080818;
+$primary-Blue-text: #30486D;
+$primary-Blue-text2: #1D314E;
+$primary-Blue-back: #FAFAFA;
+$primary-Blue-circle: #36A19B;
+$primary-Blue-400: #1A90B0;
+
+
+$primary-grey-100: #F9F9F9;
+
+

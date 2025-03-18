@@ -1,0 +1,110 @@
+@import "../../../../../assets/styles/abstracts/mixins";
+@import "../../../../../assets/styles/base/variables";
+
+.products{
+    padding-block: 54px;
+   .container{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    .product-title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        h3{
+            margin: 0;
+            font-family: 'IBM Plex Sans';
+            font-size: 24px;
+            font-weight: 600;
+            color: $primary-Blue-text;
+        }
+        p{
+            margin: 0;
+            font-family: 'IBM Plex Sans';
+            font-size: 18px;
+            font-weight: 400;
+            color: $primary-Blue-text2;
+        }
+    }
+    .product-info{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        .boxs{
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            .box{
+               flex-basis: calc((100% - 24px) / 2);
+               @include respond('tablet'){
+               flex-basis: 100%;
+            }
+            }
+        }
+        .box{
+            display: flex;
+            gap: 54px;
+            align-items: center;
+            background-color: $primary-grey-100;
+            padding: 16px;
+            border-radius: 16px;
+            @include respond('tablet'){
+                flex-direction: column-reverse;
+
+            }
+            .big-image{
+                width: 470px;
+                border-radius: 16px;
+                overflow: hidden;
+                @include respond('tablet'){
+                   width: 100%;
+                }
+                img{
+                    max-width: 100%;
+                }
+            }
+            .box-info{
+                flex: 1;
+                display: flex ;
+                flex-direction: column;
+                gap: 16px;
+                .main-box-info{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    h4{
+                        margin: 0;
+                        font-family: 'IBM Plex Sans';
+                        font-size: 26px;
+                        font-weight: 400;
+                        color: $primary-Blue-text;
+                    }
+                    p{
+                        margin: 0;
+                        font-family: 'IBM Plex Sans';
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+
+                }
+                .more-btn{
+                    display: flex;
+                    justify-content: end;
+                    button{
+                        width: fit-content;
+                        border: 1px solid $primary-Blue-400;
+                        color: $primary-Blue-400;
+                        border-radius: 8px;
+                        padding: 8px;
+                        font-size: 12px;
+                        font-weight: 400;
+                        background-color: white;
+                    }
+
+                }
+            }
+        }
+    }
+   }
+}
