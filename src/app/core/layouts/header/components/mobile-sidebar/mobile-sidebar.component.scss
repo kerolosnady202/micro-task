@@ -1,0 +1,39 @@
+@import '../../../../../../assets/styles/abstracts/mixins';
+@import '../../../../../../assets/styles/base/variables';
+
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 54px;
+
+    ::ng-deep {
+        .p-panelmenu.p-component {
+            display: flex;
+            flex-direction: column;
+            /* gap: 16px; */
+        }
+        .p-panelmenu-header-content{
+            border: none;
+            text-align: center;
+            padding: 8px;
+            background: transparent;
+            & > span:has(i){
+              display: flex;
+              justify-content: space-between;
+            }
+          
+        }
+        .p-panelmenu-content{
+            border: none;
+            li{
+                text-align: center;
+            }
+        }
+    }
+    button{
+        padding: 8px;
+        border: none;
+        border-radius: 8px;
+        color: $primary-Blue-text;
+    }
+}

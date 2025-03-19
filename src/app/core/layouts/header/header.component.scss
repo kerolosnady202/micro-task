@@ -2,149 +2,194 @@
 @import "../../../../assets/styles/abstracts/placeholders";
 @import "../../../../assets/styles/abstracts/mixins";
 
-nav {
+
+.main-nav-container{
+    display: flex;
+    justify-content: space-between;
     background-color: $primary-Blue-900;
-    padding: 16px 8px;
-    height: 86px;
-
-    .container {
-        display: flex;
-        gap: 24px;
-        align-items: center;
-
-        .logo {
-            width: 253px;
-            height: 32px;
-
-            img {
-                max-width: 100%;
-            }
-        }
-
-        .links {
+    align-items: center;
+    ::ng-deep {
+        .mobile-res{
+          display: none;
+          @include respond('desktop'){
+            display: block;
+            margin-inline-end: 16px;
+          }
+          .mobile {
+            background-color: $primary-Blue-600;
+            padding: toRem(16px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
            
-            /*    display: flex;
+            img {
+              width: toRem(60px);
+              height: toRem(60px);
+            }
+            .p-button {
+              background-color: transparent !important;
+              border: none;
+              padding: 0px;
+             
+            }
+          }
+        }
+       
+      }
+    
+    nav {
+        background-color: $primary-Blue-900;
+        padding: 16px 8px;
+        height: 86px;
+        width: 100%;
+        @include respond("desktop"){
+            padding:  8px;
+            height: 60px;
+           }
+        .container {
+            display: flex;
             gap: 24px;
-            list-style: none;
-            margin: 0;
-
-            li {
-                a {
-                    text-decoration: none;
-                    font-size: 18px;
-                    font-weight: 400;
-                    color: $primary-grey-100;
-                    font-family: 'IBM Plex Sans';
+            align-items: center;
+    
+            .logo {
+                width: 253px;
+                height: 32px;
+                @include respond("desktop"){
+                    width: 180px;
+                    margin-top: 8px;
+                   }
+                img {
+                    max-width: 100%;
                 }
-            } */
-            ::ng-deep {
-                .p-menubar {
-                    background: none;
-                    border: none;
-                    padding: 0;
-                    display: flex;
-                    gap: 24px;
-                    list-style: none;
-                    margin: 0;
-
-                    ul.p-menubar-root-list {
-                        margin: 0;
+            }
+    
+            .links {
+               
+                /*    display: flex;
+                gap: 24px;
+                list-style: none;
+                margin: 0;
+    
+                li {
+                    a {
+                        text-decoration: none;
+                        font-size: 18px;
+                        font-weight: 400;
+                        color: $primary-grey-100;
+                        font-family: 'IBM Plex Sans';
+                    }
+                } */
+                ::ng-deep {
+                    .p-menubar {
+                        background: none;
+                        border: none;
                         padding: 0;
                         display: flex;
                         gap: 24px;
-                        flex-wrap: nowrap;
-
-                        li {
-                            .p-menuitem-content {
-                                text-decoration: none;
-                                font-size: 18px;
-                                font-weight: 400;
-                                color: $primary-grey-100;
-                                font-family: 'IBM Plex Sans';
-                                background-color: transparent;
-                                border: none;
-
-                                &:hover {
-
-                                    background-color: transparent;
-                                    border: none;
-                                }
-
-                                .p-menuitem-link {
-                                    padding: 0;
+                        list-style: none;
+                        margin: 0;
+    
+                        ul.p-menubar-root-list {
+                            margin: 0;
+                            padding: 0;
+                            display: flex;
+                            gap: 24px;
+                            flex-wrap: nowrap;
+    
+                            li {
+                                .p-menuitem-content {
                                     text-decoration: none;
                                     font-size: 18px;
                                     font-weight: 400;
                                     color: $primary-grey-100;
                                     font-family: 'IBM Plex Sans';
-
-                                    span {
-                                        &:last-child {
-                                            display: none;
+                                    background-color: transparent;
+                                    border: none;
+    
+                                    &:hover {
+    
+                                        background-color: transparent;
+                                        border: none;
+                                    }
+    
+                                    .p-menuitem-link {
+                                        padding: 0;
+                                        text-decoration: none;
+                                        font-size: 18px;
+                                        font-weight: 400;
+                                        color: $primary-grey-100;
+                                        font-family: 'IBM Plex Sans';
+    
+                                        span {
+                                            &:last-child {
+                                                display: none;
+                                            }
                                         }
                                     }
                                 }
-                            }
-
-                            .p-element {
-                                .p-submenu-list {
-                                    padding: 24px 16px !important;
-                                    border-radius: 10px !important;
-                                    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
-                                    flex-direction: column;
-                                    gap: 10px;
-                                    width: auto;
-                                    min-width: 180px;
-                                    max-width: 265px;
-
-                                    li {
-                                        padding: 10px;
-
-                                        a {
-                                            font-size: 12px;
-                                            font-weight: 600;
-                                            color: $primary-Blue-700;
-                                            font-family: 'IBM Plex Sans';
+    
+                                .p-element {
+                                    .p-submenu-list {
+                                        padding: 24px 16px !important;
+                                        border-radius: 10px !important;
+                                        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+                                        flex-direction: column;
+                                        gap: 10px;
+                                        width: auto;
+                                        min-width: 180px;
+                                        max-width: 265px;
+    
+                                        li {
+                                            padding: 10px;
+    
+                                            a {
+                                                font-size: 12px;
+                                                font-weight: 600;
+                                                color: $primary-Blue-700;
+                                                font-family: 'IBM Plex Sans';
+                                            }
                                         }
+    
+                                        /* width: auto; */
                                     }
-
-                                    /* width: auto; */
                                 }
                             }
+    
                         }
-
+                    }
+    
+                    .p-menubar-end {
+                        display: none;
+                    }
+    
+                    .p-menuitem:has(.p-element) .p-menuitem-content .p-menuitem-link span:last-child {
+                        display: inline-block !important;
+                        white-space: nowrap;
                     }
                 }
-
-                .p-menubar-end {
+                @include respond('desktop'){
                     display: none;
                 }
-
-                .p-menuitem:has(.p-element) .p-menuitem-content .p-menuitem-link span:last-child {
-                    display: inline-block !important;
-                    white-space: nowrap;
-                }
+    
+    
             }
-            @include respond('desktop'){
+    
+            .nav-btn {
+                width: 130px;
+                height: 46px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid $primary-Blue-400;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: 400;
+                color: $primary-Blue-400;
+                font-family: 'IBM Plex Sans';
+               @include respond("desktop"){
                 display: none;
+               }
             }
-
-
-        }
-
-        .nav-btn {
-            width: 130px;
-            height: 46px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid $primary-Blue-400;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 400;
-            color: $primary-Blue-400;
-            font-family: 'IBM Plex Sans';
-
         }
     }
 }

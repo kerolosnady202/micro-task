@@ -1,18 +1,21 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
+import { ButtonModule } from 'primeng/button';
+import { MobileSidebarComponent } from './components/mobile-sidebar/mobile-sidebar.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MenubarModule, CommonModule],
+  imports: [MenubarModule, CommonModule,ButtonModule,MobileSidebarComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   items: MenuItem[] | undefined;
+  innerWidth:number=window.innerWidth;
   nav_items: { label: string, url: string }[] = [
     { label: 'الرئيسية', url: 'home' },
     { label: 'عن ميكروتيك', url: 'about' },
@@ -23,7 +26,12 @@ export class HeaderComponent {
     { label: 'اتصل بنا', url: 'footer' },
   ]
   btn_title: string = "طلب عرض الاسعار"
+  sidebarVisible:boolean=false
   private _Router=inject(Router)
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.innerWidth = window.innerWidth
+  }
   ngOnInit() {
 
     this.items = [
