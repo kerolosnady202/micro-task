@@ -25,7 +25,7 @@ export class WorksComponent {
     this.items = [
         {
             label: 'المالية',
-            icon: 'pi pi-home',
+            icon: 'pi pi-money-bill',
             command: () => {
               this.dataTitle= 'المالية'
              //   this.messageService.add({ severity: 'success', summary: 'Selected', detail: 'Dashboard', life: 3000 });
@@ -33,7 +33,7 @@ export class WorksComponent {
         },
         {
             label: 'HR',
-            icon: 'pi pi-chart-line',
+            icon: 'pi pi-user',
             command: () => {
               this.dataTitle='الموارد البشرية'
                // this.messageService.add({ severity: 'success', summary: 'Selected', detail: 'Transactions', life: 3000 });
@@ -49,7 +49,7 @@ export class WorksComponent {
         },
         {
             label: 'المشتريات',
-            icon: 'pi pi-inbox',
+            icon: 'pi pi-shopping-cart',
             command: () => {
               this.dataTitle='المشتريات'
               //  this.messageService.add({ severity: 'success', summary: 'Selected', detail: 'Messages', life: 3000 });
