@@ -1,0 +1,21 @@
+<section class="sectors">
+    <div class="container">
+        <div class="secter-header">
+            <h3>{{secTitle}}</h3>
+            <p>{{secSubTitle}}</p>
+        </div>
+        <div class="secter-content">
+            <div class="sector-boxs">
+                @for (item of sectorsBoxs; track $index) {
+                    <div class="box">
+                        <img [src]="item.imgUrl" [alt]="item.label" />
+                    </div>
+                }
+            </div>
+            <div class="main-box">
+                <p>قطاع العقارات والمقاولات</p>
+                <button>المزيد</button>
+            </div>
+        </div>
+    </div>
+</section>

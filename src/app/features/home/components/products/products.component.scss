@@ -37,9 +37,10 @@
             flex-wrap: wrap;
             .box{
                flex-basis: calc((100% - 24px) / 2);
-               @include respond('tablet'){
+               @include respond('desktop'){
                flex-basis: 100%;
             }
+
             }
         }
         .box{
@@ -51,7 +52,6 @@
             border-radius: 16px;
             @include respond('tablet'){
                 flex-direction: column-reverse;
-
             }
             .big-image{
                 width: 470px;

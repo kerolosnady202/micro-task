@@ -1,0 +1,82 @@
+@import "../../../../../assets/styles/base/variables";
+@import "../../../../../assets/styles/abstracts/mixins";
+.sectors{
+    padding-block: 54px;
+    .container{
+      display: flex;
+      flex-direction: column;
+      gap: 54px;
+      .secter-header{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        h3{
+            font-family: 'IBM Plex Sans';
+            font-size: 24px;
+            font-weight: 600;
+            color: $primary-Blue-text;
+            margin: 0;
+        }
+        p{
+            font-family: 'IBM Plex Sans';
+            font-size: 18px;
+            font-weight: 400;
+            color: $primary-Blue-text2;
+            margin: 0;
+        }
+      }
+      .secter-content{
+        display: flex;
+        gap: 24px;
+        @include respond('desktop'){
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-box{
+            width: 200px;
+            height: 322px;
+            flex: 1;
+            background-color: #978e8e;
+            padding: 32px;
+            display: flex;
+            align-items: end;
+            justify-content: end;
+            flex-direction: column;
+            gap: 24px;
+            border-radius: 16px;
+            p{
+                font-family: 'IBM Plex Sans';
+                font-size: 29px;
+                font-weight: 400;
+                color: white;
+                margin: 0;
+            }
+            button{
+                padding: 16px;
+                border-radius: 8px;
+                color: white;
+                border: 1px solid white;
+                background-color: transparent;
+            }
+        }
+        .sector-boxs{
+            display: flex;
+            gap: 24px;
+           // flex-wrap: wrap;
+           @include respond('tablet'){
+            flex-wrap: wrap;
+          
+        }
+            .box{
+                flex-basis: calc((100% - 72px) / 4);
+                @include respond('tablet'){  
+                        flex-basis: calc((100% - 24px) / 2);
+                }
+            }
+          
+        }
+      }
+    }
+}
